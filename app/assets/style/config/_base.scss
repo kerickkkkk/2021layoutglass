@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  // display: block;
+}
+
+body {
+  font-size: 16px;
+  line-height: $base-line-height;
+  font-family: $body-font-family;
+}
+
+.container {
+  max-width: pxToRem($container-width);
+  margin: {
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: auto;
+  }
+  @include pad {
+    max-width: pxToRem(672px);
+    padding: {
+      left: pxToRem(48px);
+      right: pxToRem(48px);
+    }
+  }
+}
+
+a{
+  text-decoration: none;
+}

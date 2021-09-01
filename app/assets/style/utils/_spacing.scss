@@ -1,0 +1,89 @@
+//spacing
+// $direction: top right bottom left;
+// $direction-short: t r b l;
+
+//container 模仿 bootstrap 三層架構
+// 先用固定值，
+$gutter: 12px;
+
+.row {
+  margin: {
+    left: -$gutter;
+    right: -$gutter;
+  }
+}
+
+// spacing type margin padding
+$spacingTypes: (
+  p: padding,
+  m: margin,
+);
+
+// 少了 x , y
+$directions: (
+  "": "",
+  t: top,
+  r: right,
+  b: bottom,
+  l: left,
+);
+
+$media: (
+  "" : "",
+  md: "pad",
+  xs: "mobile",
+);
+
+// @each $spacingTypesKey, $spacingTypesVal in $spacingTypes {
+//   @each $name, $val in $directions {
+//     @if ($name != "") {
+//       $val: -#{$val};
+//     }
+//     @for $i from 1 through length($spacings) {
+//       @include desktop-below {
+//         .#{$spacingTypesKey}#{$name}-#{$i} {
+//           margin#{$val}: pxToRem(nth($spacings, $i));
+//         }
+//       }
+//     }
+//   }
+// }
+
+//margin
+
+@each $name, $val in $directions {
+  @if ($name != "") {
+    $val: -#{$val};
+  }
+  @for $i from 1 through length($spacings) {
+    .m#{$name}-#{$i} {
+      margin#{$val}: pxToRem(nth($spacings, $i));
+    }
+  }
+
+  // @each $spacing in $spacings{
+  //     .m#{$name}-#{$spacing}{
+  //         margin#{$val}: pxToRem($spacing);
+  //     }
+  // }
+}
+
+//padding
+@each $name, $val in $directions {
+  @if ($name != "") {
+    $val: -#{$val};
+  }
+  @for $i from 1 through length($spacings) {
+    .p#{$name}-#{$i} {
+      padding#{$val}: pxToRem(nth($spacings, $i));
+    }
+  }
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}

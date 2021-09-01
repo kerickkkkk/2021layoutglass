@@ -1,0 +1,66 @@
+$h-fonts: 64px 48px 36px 24px;
+$fonts: 64px 48px 36px 24px 20px 16px 14px;
+$font: (
+  1: pxToRem(64px),
+  2: pxToRem(48px),
+  3: pxToRem(32px),
+  4: pxToRem(24px),
+  5: pxToRem(20px),
+);
+// @for $index from 1 through 6 {
+//     .font-#{nth($fontNames, $index)}{
+//       font-size: pxToRem(nth($fonts,$index)) ;
+//     }
+
+// }
+
+// h 系列設定
+@for $i from 1 through length($h-fonts) {
+  .h#{$i} {
+    font-size: pxToRem(nth($h-fonts, $i));
+    color: $color-secondary;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+}
+
+// font 字體級距
+$font-1: pxToRem(72px);
+$font-2: pxToRem(48px);
+$font-3: pxToRem(24px);
+$font-5: pxToRem(20px);
+$font-6: pxToRem(16px);
+$font-7: pxToRem(14px);
+
+$text-white: #fff;
+
+$font-weight-black: 900;
+$font-weight-blod: 700;
+$font-weight-semiBlod: 600;
+$font-weight-medium: 500;
+$font-weight-normal: 400;
+$font-weight-regular: 400;
+$font-weight-light: 300;
+
+.font-weight-black {
+  font-weight: 900;
+}
+.font-weight-blod {
+  font-weight: 700;
+}
+.font-weight-semiBlod {
+  font-weight: 600;
+}
+.font-weight-medium {
+  font-weight: 500;
+}
+.font-weight-normal {
+  font-weight: 400;
+}
+.font-weight-regular {
+  font-weight: 400;
+}
+
+.font-italic {
+  font-style: italic;
+}

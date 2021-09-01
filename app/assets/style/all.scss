@@ -1,23 +1,24 @@
-$color: #00cc99;
 
-.header {
-  height: 200px;
-  background-color: #00cc99;
-}
+@import "./utils/function";
+@import "./config/variables";
+@import "./utils/mixin";
 
-.footer {
-  height: 200px;
-  background-color: #00cc99;
-}
+// reset
+@import "./config/reset";
+@import "./config/base";
+@import "./config/typography";
 
-.box {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  display: flex;
-  transition: all 0.5s;
-  &:hover {
-    width: 200px;
-    background-color: $color;
-  }
-}
+@import "./components/button";
+
+
+@import "./utils/spacing";
+@import "./utils/utilities";
+
+@import "./layout/layout";
+
+
+
+
+
+
+

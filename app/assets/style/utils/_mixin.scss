@@ -1,0 +1,34 @@
+@mixin pad {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+
+@mixin positionAB($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: absolute;
+  @if $top != auto {
+    top: $top;
+  }
+  @if $right != auto {
+    right: $right;
+  }
+  @if $bottom != auto {
+    bottom: $bottom;
+  }
+  @if $left != auto {
+    left: $left;
+  }
+}
+
+@mixin positionABCenter{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

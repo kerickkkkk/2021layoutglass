@@ -1,0 +1,24 @@
+.btn{
+  //Structure pure css core 
+  display: inline-block;
+  line-height: normal;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  user-select: none;
+  // 全網站設定已經有了
+  // box-sizing: border-box;
+
+  padding: {
+    top    : pxToRem(16px);
+    right  : pxToRem(58px);
+    bottom : pxToRem(16px);
+    left   : pxToRem(58px);
+  };  
+  border: none;
+  &:hover {
+    background-color: $color-secondary;
+  }
+}
