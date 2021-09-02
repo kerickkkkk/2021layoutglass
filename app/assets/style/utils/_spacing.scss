@@ -2,17 +2,6 @@
 // $direction: top right bottom left;
 // $direction-short: t r b l;
 
-//container 模仿 bootstrap 三層架構
-// 先用固定值，
-$gutter: 30px;
-
-.row {
-  margin: {
-    left: -$gutter/2;
-    right: -$gutter/2;
-  }
-}
-
 // spacing type margin padding
 $spacingTypes: (
   p: padding,

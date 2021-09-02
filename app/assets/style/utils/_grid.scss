@@ -1,3 +1,9 @@
+$column: 12;
+$gutter: 30px;
+
+//container 模仿 bootstrap 三層架構
+// 先用固定值，
+
 .container {
   max-width: pxToRem($container-width);
   margin: {
@@ -21,3 +27,60 @@
     }
   }
 }
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: {
+    left: -$gutter/2;
+    right: -$gutter/2;
+  }
+  > *{
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: {
+      left: $gutter/2;
+      right: $gutter/2;
+    }
+  }
+}
+
+// grid col
+@for $i from 1 through $column{
+  .col-#{$i}{
+    flex: 0 0 auto;
+    width: (100%/$column) * $i;
+  }
+}
+
+// grid col-lg
+@for $i from 1 through $column{
+  .col-lg-#{$i}{
+    flex: 0 0 auto;
+    width: (100%/$column) * $i;
+  }
+  @include pad{
+    .col-lg-#{$i}{
+      width: 100%;
+    }
+  }
+}
+
+// grid col-md
+@for $i from 1 through $column{
+  // 重疊處要抽出 不然會無法覆蓋
+  @include betweenPadMobile{
+    .col-md-#{$i}{
+      flex: 0 0 auto;
+      width: (100%/$column) * $i;
+    }
+  }
+  @include mobile{
+    .col-md-#{$i}{
+      width: 100%;
+    }
+  }
+}
+
