@@ -32,3 +32,18 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin addGrid($before, $after , $property , $value){
+  @include pad {
+    #{$before}-lg-#{$after} {
+      #{$property}: #{$value};
+    }
+  }
+
+  @include mobile {
+    #{$before}-md-#{$after} {
+      #{$property}: #{$value};
+    }
+  }
+  @content
+}

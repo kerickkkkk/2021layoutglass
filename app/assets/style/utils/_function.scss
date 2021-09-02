@@ -1,3 +1,7 @@
 @function pxToRem($size, $base: 16px) {
-  @return $size/$base * 1rem;
+  @if($size == 0) {
+    @return 0
+  }@else{
+    @return $size/$base * 1rem;
+  }
 }

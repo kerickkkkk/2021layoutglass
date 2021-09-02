@@ -1,0 +1,23 @@
+.container {
+  max-width: pxToRem($container-width);
+  margin: {
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: auto;
+  }
+  @include pad {
+    max-width: pxToRem(960px);
+    padding: {
+      left: pxToRem(39px);
+      right: pxToRem(39px);
+    }
+  }
+  @include mobile {
+    max-width: pxToRem(720px);
+    padding: {
+      left: pxToRem(15px);
+      right: pxToRem(15px);
+    }
+  }
+}

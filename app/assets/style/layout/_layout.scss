@@ -3,6 +3,16 @@
     left: 88px;
     right: 56px;
   };
+  @include mobile {
+    padding: {
+      left: 0px;
+      right: 0px;
+    }
+  }
+  
+}
+
+.nav{
   .logo{
     width: 80px;
     height: 49px;
@@ -10,22 +20,56 @@
       top: 30px;
       bottom: 30px;
     };
-  }
-  .navMenu{
-    >li a{
-      font-size: 20px;
-      padding: {
-        top: 39px;
-        bottom: 39px;
+    
+    background-repeat: no-repeat;
+    @include mobile {
+      width: 100%;
+      margin: {
+        top: 10px;
+        bottom: 10px;
       };
-      &:hover{
-        background-color: $color-secondary;
-      }
+      background-position: center;
     }
   }
+  .navMenu{
+    @include mobile {
+      width: 100%;
+    }
+    >li{
+      @include mobile {
+        width: 50%;
+      }
+      > a{
+        font-size: 20px;
+        display: block;
+        padding: {
+          top: 39px;
+          bottom: 39px;
+        };
+        @include pad {
+          padding: {
+            right : 20px;
+            left : 20px;
+          };
+        }
+        @include mobile {
+          border: 1px solid #fff;
+          text-align: center;
+          padding: {
+            top : 8px;
+            bottom : 8px;
+          };
+        }
+        &:hover{
+          background-color: $color-primary;
+        }
+      }
+    } 
+    
+  }
 }
-
 .footer {
-  height: 200px;
-  background-color: #00cc99;
+  a{
+    color: $white;
+  }
 }

@@ -4,12 +4,12 @@
 
 //container 模仿 bootstrap 三層架構
 // 先用固定值，
-$gutter: 12px;
+$gutter: 30px;
 
 .row {
   margin: {
-    left: -$gutter;
-    right: -$gutter;
+    left: -$gutter/2;
+    right: -$gutter/2;
   }
 }
 
@@ -55,35 +55,113 @@ $media: (
   @if ($name != "") {
     $val: -#{$val};
   }
-  @for $i from 1 through length($spacings) {
-    .m#{$name}-#{$i} {
-      margin#{$val}: pxToRem(nth($spacings, $i));
+  @each $spacingkey, $spacingVal in $spacingList {
+    .m#{$name}-#{$spacingkey} {
+      margin#{$val}: pxToRem($spacingVal);
     }
   }
 
-  // @each $spacing in $spacings{
-  //     .m#{$name}-#{$spacing}{
-  //         margin#{$val}: pxToRem($spacing);
-  //     }
-  // }
 }
+// m-lg
+@each $name, $val in $directions {
+  @if ($name != "") {
+    $val: -#{$val};
+  }
+  @include pad{
+    @each $spacingkey, $spacingVal in $spacingList {
+      .m#{$name}-lg-#{$spacingkey} {
+        margin#{$val}: pxToRem($spacingVal);
+      }
+    }
+  }
+}
+
+// m-md
+@each $name, $val in $directions {
+  @if ($name != "") {
+    $val: -#{$val};
+  }
+  @include mobile{
+    @each $spacingkey, $spacingVal in $spacingList {
+      .m#{$name}-md-#{$spacingkey} {
+        margin#{$val}: pxToRem($spacingVal);
+      }
+    }
+  }
+}
+
 
 //padding
 @each $name, $val in $directions {
   @if ($name != "") {
     $val: -#{$val};
   }
-  @for $i from 1 through length($spacings) {
-    .p#{$name}-#{$i} {
-      padding#{$val}: pxToRem(nth($spacings, $i));
+  @each $spacingkey, $spacingVal in $spacingList {
+    .p#{$name}-#{$spacingkey} {
+      padding#{$val}: pxToRem($spacingVal);
+    }
+  }
+  // @for $i from 1 through length($spacings) {
+  //   .p#{$name}-#{$i} {
+  //     padding#{$val}: pxToRem(nth($spacings, $i));
+  //   }
+    
+  //   // 會有覆蓋問題應該在最下方
+  //   // @include pad {
+  //   //   .p#{$name}-lg-#{$i} {
+  //   //     padding#{$val}: pxToRem(nth($spacings, $i));
+  //   //   }
+  //   // }
+
+  //   // @include mobile {
+  //   //   .p#{$name}-md-#{$i} {
+  //   //     padding#{$val}: pxToRem(nth($spacings, $i));
+  //   //   }
+  //   // }
+  // }
+}
+//p-lg
+@each $name, $val in $directions {
+  @if ($name != "") {
+    $val: -#{$val};
+  }
+
+  @include pad { 
+    @each $spacingkey, $spacingVal in $spacingList {
+      .p#{$name}-lg-#{$spacingkey} {
+        padding#{$val}: pxToRem($spacingVal);
+      }
+    }
+    // @for $i from 1 through length($spacings) {
+    //   .p#{$name}-lg-#{$i} {
+    //     padding#{$val}: pxToRem(nth($spacings, $i));
+    //   }
+    // }
+  }
+}
+
+// p-md
+@each $name, $val in $directions {
+  @if ($name != "") {
+    $val: -#{$val};
+  }
+
+  @include mobile { 
+    @each $spacingkey, $spacingVal in $spacingList {
+      .p#{$name}-md-#{$spacingkey} {
+        padding#{$val}: pxToRem($spacingVal);
+      }
     }
   }
 }
 
+
 .h-100 {
   height: 100%;
 }
+@include addGrid('.h', '100', 'height', '100%') {}
 
 .w-100 {
   width: 100%;
 }
+@include addGrid('.w', '100', 'width', '100%') {}

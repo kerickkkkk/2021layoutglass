@@ -1,19 +1,13 @@
-$h-fonts: 64px 48px 36px 24px;
-$fonts: 64px 48px 36px 24px 20px 16px 14px;
-$font: (
-  1: pxToRem(64px),
-  2: pxToRem(48px),
-  3: pxToRem(32px),
-  4: pxToRem(24px),
-  5: pxToRem(20px),
-);
-// @for $index from 1 through 6 {
-//     .font-#{nth($fontNames, $index)}{
-//       font-size: pxToRem(nth($fonts,$index)) ;
-//     }
-
-// }
-
+//
+$h-fonts: 64px 48px 36px 24px 16px;
+// 72 64 48 42 36 32 24 20 16 14
+$fonts:72px 64px 48px 42px 36px 24px 20px 16px 14px;
+// 之後再補 list 的擴充性似乎差了點
+// $breakPoints:(
+//   '':'',
+//   lg: 'pad',
+//   md: 'mobile'
+// );
 // h 系列設定
 @for $i from 1 through length($h-fonts) {
   .h#{$i} {
@@ -24,13 +18,29 @@ $font: (
   }
 }
 
-// font 字體級距
-$font-1: pxToRem(72px);
-$font-2: pxToRem(48px);
-$font-3: pxToRem(24px);
-$font-5: pxToRem(20px);
-$font-6: pxToRem(16px);
-$font-7: pxToRem(14px);
+// font size
+@for $index from 1 through length($fonts) {
+    .fs-#{$index}{
+      font-size: pxToRem(nth($fonts,$index)) ;
+    }
+}
+// font size - lg
+@for $index from 1 through length($fonts) {
+  @include pad{
+    .fs-lg-#{$index}{
+      font-size: pxToRem(nth($fonts,$index)) ;
+    }
+  }
+}
+// font size -md
+@for $index from 1 through length($fonts) {
+  @include mobile{
+    .fs-md-#{$index}{
+      font-size: pxToRem(nth($fonts,$index)) ;
+    }
+  }
+}
+
 
 $text-white: #fff;
 
