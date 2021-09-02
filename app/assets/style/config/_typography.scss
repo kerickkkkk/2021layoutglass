@@ -12,7 +12,7 @@ $fonts:72px 64px 48px 42px 36px 24px 20px 16px 14px;
 @for $i from 1 through length($h-fonts) {
   .h#{$i} {
     font-size: pxToRem(nth($h-fonts, $i));
-    color: $color-secondary;
+    color: $color-primary;
     line-height: 1.2;
     font-weight: 600;
   }
@@ -52,25 +52,26 @@ $font-weight-normal: 400;
 $font-weight-regular: 400;
 $font-weight-light: 300;
 
-.font-weight-black {
+.fw-black {
   font-weight: 900;
 }
-.font-weight-blod {
+.fw-blod {
   font-weight: 700;
 }
-.font-weight-semiBlod {
+.fw-semiBlod {
   font-weight: 600;
 }
-.font-weight-medium {
+.fw-medium {
   font-weight: 500;
 }
-.font-weight-normal {
+.fw-normal {
   font-weight: 400;
 }
-.font-weight-regular {
+.fw-regular {
   font-weight: 400;
 }
 
 .font-italic {
   font-style: italic;
 }
+
