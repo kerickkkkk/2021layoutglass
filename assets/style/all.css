@@ -1757,15 +1757,15 @@ h5, .h5 {
   font-size: 100px; }
 
 .classical .optical {
-  background-image: url(../../../assets/images/product-1.png); }
+  background-image: url(../assets/images/product-1.png); }
 
 .classical .sunglasses {
-  background-image: url(../../../assets/images/product-2.png); }
+  background-image: url(../assets/images/product-2.png); }
   .classical .sunglasses:hover {
-    background-image: url(../../../assets/images/product-2-color.png); }
+    background-image: url(../assets/images/product-2-color.png); }
 
 .classical .functional {
-  background-image: url(../../../assets/images/product-3.png); }
+  background-image: url(../assets/images/product-3.png); }
 
 .classical__img {
   height: 320px; }
@@ -1814,10 +1814,10 @@ h5, .h5 {
       height: 291px; } }
 
 .jointDesign .double {
-  background-image: url(./assets/images/product-8.png); }
+  background-image: url(../assets/images/product-8.png); }
 
 .jointDesign .youth {
-  background-image: url(./assets/images/product-9.png); }
+  background-image: url(../assets/images/product-9.png); }
 
 .jointDesign__text {
   line-height: 108px; }
