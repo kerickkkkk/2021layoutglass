@@ -1,0 +1,18 @@
+.card{
+  border: 1px solid #DEE2E6;
+  border-radius: .25rem;
+  min-height: pxToRem(460px);
+  // display: flex;
+  // flex-direction: column;
+
+  &__img, img{
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    min-height: pxToRem(256px);
+  }
+
+  &__body{
+    min-height: pxToRem(460px - 256px);
+    padding: 1rem 1rem;
+  }
+}
