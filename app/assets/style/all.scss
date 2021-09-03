@@ -1,4 +1,3 @@
-
 @import "./utils/function";
 @import "./config/variables";
 @import "./utils/mixin";
@@ -8,14 +7,19 @@
 @import "./config/base";
 @import "./config/typography";
 
-@import "./components/button";
+
 
 @import "./utils/grid";
 @import "./utils/spacing";
 @import "./utils/utilities";
 
-@import "./layout/layout";
+// component
+@import "./components/button";
+@import "./components/input";
+@import "./components/card";
 
+
+@import "./layout/layout";
 @import "./pages/index";
 
 

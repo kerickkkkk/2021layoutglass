@@ -17,6 +17,10 @@
   background-color: $color-primary;
 }
 
+.btn-secondary{
+  color: #fff;
+  background-color: $color-secondary;
+}
 // block
 .d-block{
   display: block;
@@ -109,6 +113,9 @@
 }
 .text-secondary{
   color: $color-secondary;  
+}
+.text-muted{
+  color: $color-lighter-1;
 }
 .border-bottom{
   border-bottom: 1px solid;

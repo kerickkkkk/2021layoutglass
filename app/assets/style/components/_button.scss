@@ -19,6 +19,6 @@
   };  
   border: none;
   &:hover {
-    background-color: $color-secondary;
+    background-color: darken($color-secondary, 20%);
   }
 }
