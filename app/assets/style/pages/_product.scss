@@ -1,0 +1,35 @@
+.navbar__submenu{
+  &__item{
+    &:first-child{
+      border-left: 1px solid #DCDCDC;
+    }
+    border-right: 1px solid #DCDCDC;
+    >a{
+      color:#000;
+      border-bottom: 8px solid transparent;
+      @include pad{
+        padding: {
+          top: 14px;
+          bottom: 14px;
+        };
+      }
+      @include mobile{
+        padding: {
+          top: 5px;
+          bottom:5px;
+        };
+        border-width: 4px;
+      }
+      h3{
+        color:#000;
+      }
+      &:hover, &.active{
+        color: $color-secondary;
+        h3{
+          color: $color-secondary;
+        }
+        border-color: $color-secondary;
+      }
+    }
+  }
+}
