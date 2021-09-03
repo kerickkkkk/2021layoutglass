@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- meta -->
+  <%- include('./assets/ejs/meta.ejs')%>
   <title><%- title %></title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -22,20 +24,15 @@
         </a>
       </h1>
       <ul class="navMenu d-flex flex-wrap align-items-center">
-        <li><a href="#" class="text-white pt-8 pr-7 pb-8 pl-7">系列鏡框</a></li>
+        <li><a href="./product.html" class="text-white pt-8 pr-7 pb-8 pl-7">系列鏡框</a></li>
         <li><a href="#" class="text-white pt-8 pr-7 pb-8 pl-7">門市據點</a></li>
         <li><a href="#" class="text-white pt-8 pr-7 pb-8 pl-7">部落格</a></li>
         <li><a href="#" class="text-white pt-8 pr-7 pb-8 pl-7">常見問題</a></li>
       </ul>
     </nav>
-    <div class="hero bg-cover-center" style="background-image: url(./assets/images/banner.png);">
-      <div class="container d-flex justify-content-end align-items-center h-100">
-        <div class="text-primary text-right">
-          <span class="fs-5 fs-md-8 fw-normal">Promise-Desert 2020 早春系列</span>
-          <h2 class="h1 fs-md-5 fw-bold">看得清，才能看得遠</h2>
-        </div>
-      </div>
-    </div>
+    <% if(current === 'index') { %> 
+      <%- include('./assets/ejs/hero')%>
+    <% } %>
   </header>
 
   <%- contents %>
