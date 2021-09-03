@@ -10,7 +10,7 @@ $fonts:72px 64px 48px 42px 36px 24px 20px 16px 14px;
 // );
 // h 系列設定
 @for $i from 1 through length($h-fonts) {
-  .h#{$i} {
+  h#{$i},.h#{$i} {
     font-size: pxToRem(nth($h-fonts, $i));
     color: $color-primary;
     line-height: 1.2;

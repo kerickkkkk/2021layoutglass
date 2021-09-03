@@ -1,12 +1,6 @@
-// bg
-.bg-transparent{
-  background-color: transparent;
-}
 
-.bg-cover-center {
-  background-position: center center;
-  background-size: cover;
-}
+
+
 //logo
 .hide-text {
   text-indent: 101%;
@@ -28,7 +22,6 @@
   display: block;
 }
 
-// bg
 // flex
 .d-flex {
   display: flex;
@@ -44,11 +37,17 @@
   flex-direction: column;
 }
 
-
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+.flex-row {
+  flex-direction: row;
+}
 
 .flex-wrap{
   flex-wrap: wrap;
 }
+
 .justify-content-between {
   justify-content: space-between;
 }
@@ -68,12 +67,26 @@
   justify-content: center;
   align-items: center;
 }
-//bg
+
+
+// bg
+
+.bg-cover-center {
+  background-position: center center;
+  background-size: cover;
+}
+
+.bg-transparent{
+  background-color: transparent;
+}
 .bg-primary {
   background-color: $color-primary;
 }
 .bg-secondary {
   background-color: $color-secondary;
+}
+.bg-third {
+  background-color: $color-third;
 }
 
 //text
@@ -94,6 +107,9 @@
 .text-primary{
   color: $color-primary;  
 }
+.text-secondary{
+  color: $color-secondary;  
+}
 .border-bottom{
   border-bottom: 1px solid;
 }
@@ -101,8 +117,41 @@
   border-color: $white;
 }
 
+
+
+// position 
+.position-relative{
+  position: relative;
+}
+
+.position-absolute{
+  position: absolute;
+}
+
+.positionABCenter{
+  @include positionABCenter;
+}
+
+@include pad{
+  .positionABCenter-lg{
+    @include positionABCenter;
+  }
+}
+
+@include mobile{
+  .positionABCenter-md{
+    @include positionABCenter;
+  }
+}
+
+
+
 @include addGrid('.d', 'block', 'display', 'block') {}
 @include addGrid('.d', 'flex', 'display', 'flex') {}
 @include addGrid('.d', 'none', 'display', 'none') {}
 @include addGrid('.flex', 'column', 'flex-direction', 'column') {}
+@include addGrid('.flex', 'row', 'flex-direction', 'row') {}
+@include addGrid('.flex-row', 'reverse', 'flex-direction', 'row-reverse') {}
 @include addGrid('.justify-content', 'between', 'justify-content', 'space-between') {}
+@include addGrid('.position', 'relative', 'position', 'relative') {}
+@include addGrid('.position', 'absolute', 'position', 'absolute') {}

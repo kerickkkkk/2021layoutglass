@@ -1,0 +1,42 @@
+.useProfection{
+  .material-icons-outlined{
+    font-size: 100px;
+  }
+}
+
+.classical{
+  .optical{
+    background-image: url(../../../assets/images/product-1.png);
+  }
+  .sunglasses{
+    background-image: url(../../../assets/images/product-2.png);
+    &:hover{
+      background-image: url(../../../assets/images/product-2-color.png);
+    }
+  }
+  .functional{
+    background-image: url(../../../assets/images/product-3.png);
+  }
+  &__img{
+    height: 320px;
+    @include pad{
+      height: 168px;
+    }
+    @include mobile{
+      height: 134px;
+    }
+  }
+  &__icon{
+    font-size: 44px;
+    line-height: 72px;
+    @include pad{
+      font-size: 36px;
+    }
+  }
+  &__text{
+    line-height: 72px;
+    @include pad{
+      font-size: 28px;
+    }
+  }
+}
