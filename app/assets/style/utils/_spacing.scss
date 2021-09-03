@@ -148,9 +148,16 @@ $media: (
 .h-100 {
   height: 100%;
 }
-@include addGrid('.h', '100', 'height', '100%') {}
+
+
 
 .w-100 {
   width: 100%;
 }
+
+.w-50{
+  width: 50%;
+}
+
+@include addGrid('.h', '100', 'height', '100%') {}
 @include addGrid('.w', '100', 'width', '100%') {}

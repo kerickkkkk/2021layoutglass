@@ -33,3 +33,69 @@
     }
   }
 }
+.adBlock{
+  &__item{
+    height: 304px;
+    @include mobile{
+      height: 148px;
+    }
+    &:nth-child(1){
+      background-image: url(../images/banner-1.png);
+    }
+    &:nth-child(2){
+      background-image: url(../images/banner-2.png);
+    }
+  }
+}
+.product{
+  padding: {
+    top: 80px;
+    bottom: 160px;
+  };
+  @include pad{
+    padding: {
+      top: 56px;
+      bottom: 96px;
+    }
+  }
+  @include mobile{
+    padding: {
+      top: 32px;
+      bottom: 56px;
+    }
+  }
+
+  &__title, &__price{
+    line-height: 36px;
+    @include mobile {
+      line-height: 30px;
+    }
+  }
+  .card{
+    border: none;
+    margin-bottom: 104px;
+    border-radius: 0;
+    &__img{
+      min-height: 164px;
+      border-radius: 0;
+      @include mobile{
+        min-height: 166px;
+      }
+    }
+    &__body{
+      padding: 0;
+    }
+  }
+  
+}
+.colorbox{
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+}
+.color-first{
+  background-color: #5F3E2D;
+}
+.color-secondary{
+  background-color: #B75929;
+}

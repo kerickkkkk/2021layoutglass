@@ -1,0 +1,33 @@
+.pagination{
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  .page__item{
+    &.disabled{
+      background-color: #F2F2F2;
+    }
+    &:first-child{
+      border-left: 1px solid #555555;
+    }
+    border: {
+      top: 1px solid #555555;
+      right: 1px solid #555555;
+      bottom: 1px solid #555555;
+    };
+  }
+
+  .page__link{
+    color:#555555;
+    font-size: 18px;
+    padding: {
+      top: 12px;
+      right: 16px;
+      bottom: 12px;
+      left: 16px;
+    };
+    &:hover, &.active{
+      background-color: #000;
+      color: $white;
+    }
+  }
+}
